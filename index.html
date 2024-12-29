@@ -5,37 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rejoining...</title>
     <style>
-        body {
-            background: linear-gradient(45deg, #1a1a1a, #333333);
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: 'Orbitron', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #2a2a2a, #141414);
             overflow: hidden;
+            animation: bgMove 15s infinite linear;
         }
+
+        @keyframes bgMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 100%; }
+        }
+
         h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: #fff;
             text-align: center;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 5px;
             font-weight: bold;
-            animation: glow 1.5s ease-in-out infinite alternate;
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.2);
+            position: relative;
+            animation: glow 2s ease-in-out infinite alternate;
         }
+
         @keyframes glow {
             0% {
-                text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.2);
+                text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.6), 0 0 80px rgba(0, 255, 255, 0.4);
             }
             100% {
-                text-shadow: 0 0 20px rgba(0, 255, 255, 1), 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.6), 0 0 80px rgba(0, 255, 255, 0.4);
+                text-shadow: 0 0 30px rgba(0, 255, 255, 1), 0 0 50px rgba(0, 255, 255, 0.8), 0 0 70px rgba(0, 255, 255, 0.6), 0 0 100px rgba(0, 255, 255, 0.3);
+            }
+        }
+
+        .glow-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://media.giphy.com/media/5wS3tAq7GRNQ0/giphy.gif') center center/cover no-repeat;
+            filter: blur(5px);
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
             }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="glow-background"></div>
     <h1>Hold on please, I'm rejoining the game...</h1>
 </body>
 </html>
